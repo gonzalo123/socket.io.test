@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Comet Test</title>
+    </head>
+    <body>
+        <p><a id='customAlert' href="#" onclick='socket.send("customAlert")'>publish customAlert</a></p>
+        <p><a id='customAlert2' href="#" onclick='socket.send("customAlert2")'>publish customAlert2</a></p>
+        <script src="http://localhost:8080/socket.io/socket.io.js" type="text/javascript"></script>
+        <script type="text/javascript">
+// Start the socket
+var socket = new io.Socket(null, {port: 8080});
+socket.connect();
+
+socket.on('message', function(msg){
+    console.log(msg);
+});
+        </script>
+    </body>
+</html>
