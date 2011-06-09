@@ -1,4 +1,4 @@
-ar http = require('http');
+var http = require('http');
 var io = require('socket.io');
 
 server = http.createServer(function(req, res){
